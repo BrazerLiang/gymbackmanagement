@@ -7,7 +7,9 @@
       <el-header class="header">
         <Header></Header>
       </el-header>
-      <el-main class="main">Main</el-main>
+      <el-main class="main">
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -23,6 +25,8 @@
     background-color: #304156;
   }
   .header {
+    display: flex;
+    align-items: center;
     background-color: #009688;
   }
   .main {

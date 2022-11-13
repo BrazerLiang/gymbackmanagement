@@ -19,7 +19,7 @@
 </template>
 <script setup lang="ts">
 import MenuItem from '@/layout/menu/MenuItem.vue'
-    import { defineprops } from 'vue'
+    import { defineProps } from 'vue'
     defineProps(['menuList'])
 </script>
 

@@ -1,10 +1,13 @@
 <template>
-    <div class="header">
-        Header Name
-    </div>
-</template>
-<style scoped>
+    <Collapse></Collapse>
+  </template>
+  <script setup lang="ts">
+  import Collapse from './Collapse.vue';
+  </script>
+  <style scoped lang='scss'>
     .header {
-        color: "red";
-    }
-</style>
+    display: flex;
+    align-items: center;
+    background-color: #009688;
+  }
+  </style>

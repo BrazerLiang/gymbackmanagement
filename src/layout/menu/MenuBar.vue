@@ -1,43 +1,35 @@
-<!-- <template>
-    <div class="siderbar">
-        sliderBar
-    </div>
-</template>
-
-<script setup lang="ts">
-
-</script>
-
- -->
-
 <template>
-      <el-menu
-        default-active="2"
-        class="el-menu-vertical-demo"
-        @open="handleOpen"
-        @close="handleClose"
-        unique-opened
-        background-color="#304156"
-      >
-        <menu-item :menuList="menuList"></menu-item>
-      </el-menu>
+  <menu-logo :isCollapsed="isCollapse"></menu-logo>
+  <el-menu
+    :collapse="isCollapse"
+    :default-active="activeIndex"
+    class="el-menu-vertical-demo"
+    unique-opened
+    background-color="#304156"
+    router
+  >
+    <menu-item :menuList="menuList"></menu-item>
+  </el-menu>
 </template>
-
-<script lang="ts" setup>
-import { reactive } from 'vue'
-import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting,
-} from '@element-plus/icons-vue'
-import MenuItem from '@/layout/menu/MenuItem.vue'
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
+<script setup lang="ts">
+import { ref, reactive, computed } from "vue";
+import MenuItem from "@/layout/menu/MenuItem.vue";
+import MenuLogo from "@/layout/menu/MenuLogo.vue";
+import { useRoute } from "vue-router";
+import { collapseStore } from "@/store/collapse/index";
+const colstore = collapseStore();
+const isCollapse = computed(() => {
+  return colstore.getCollapse;
+});
+const route = useRoute();
+//获取激活的菜单
+const activeIndex = computed(() => {
+  const { path } = route;
+  return path;
+});
+//树形的菜单数据
+//reactive:定义响应式的数据（复杂类型，对象）
+//ref:定义响应式的数据 （基本类型） let count = ref(0)
 let menuList = reactive([
   {
     path: "/system",
@@ -113,7 +105,7 @@ let menuList = reactive([
       },
       {
         path: "/myFee",
-        component: "/system/FeeList",
+        component: "/system/MyFee",
         name: "myFee",
         meta: {
           title: "我的充值",
@@ -125,7 +117,7 @@ let menuList = reactive([
   },
 ]);
 </script>
-<style scoped>
+<style scoped lang="scss">
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 230px;
   min-height: 400px;
@@ -134,26 +126,26 @@ let menuList = reactive([
   border-right: none;
 }
 
-:deep(.el-sub-menu .el-sub-menu__title){
-	 color: #f4f4f5 !important;
+:deep(.el-sub-menu .el-sub-menu__title) {
+  color: #f4f4f5 !important;
 }
 
-:deep(.el-menu .el-menu-item){
-	color: #bfcbd9;
+:deep(.el-menu .el-menu-item) {
+  color: #bfcbd9;
 }
 /* 菜单点中文字的颜色 */
 
-:deep(.el-menu-item.is-active){
-	color: #409eff !important;
+:deep(.el-menu-item.is-active) {
+  color: #409eff !important;
 }
 /* 当前打开菜单的所有子菜单颜色 */
 
-:deep(.is-opened .el-menu-item){
-	background-color: #1f2d3d !important;
+:deep(.is-opened .el-menu-item) {
+  background-color: #1f2d3d !important;
 }
 /* 鼠标移动菜单的颜色 */
 
-:deep(.el-menu-item:hover){
-	background-color: #001528 !important;
+:deep(.el-menu-item:hover) {
+  background-color: #001528 !important;
 }
 </style>
