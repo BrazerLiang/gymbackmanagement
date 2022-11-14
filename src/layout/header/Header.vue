@@ -1,13 +1,10 @@
 <template>
     <Collapse></Collapse>
+    <BreadCrumb></BreadCrumb>
   </template>
   <script setup lang="ts">
   import Collapse from './Collapse.vue';
+  import BreadCrumb from './BreadCrumb.vue'
   </script>
   <style scoped lang='scss'>
-    .header {
-    display: flex;
-    align-items: center;
-    background-color: #009688;
-  }
   </style>

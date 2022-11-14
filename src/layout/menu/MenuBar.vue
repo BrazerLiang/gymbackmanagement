@@ -22,15 +22,29 @@ const isCollapse = computed(() => {
   return colstore.getCollapse;
 });
 const route = useRoute();
+console.log(route);
+
 //获取激活的菜单
 const activeIndex = computed(() => {
   const { path } = route;
+  console.log(path);
+  
   return path;
 });
 //树形的菜单数据
 //reactive:定义响应式的数据（复杂类型，对象）
 //ref:定义响应式的数据 （基本类型） let count = ref(0)
 let menuList = reactive([
+{
+        path: "/dashboard",
+        component: "Layout",
+        name: "dashboard",
+        meta: {
+          title: "首页",
+          icon: "HomeFilled",
+          roles: ["sys:dashboard"],
+        },
+      },
   {
     path: "/system",
     component: "Layout",

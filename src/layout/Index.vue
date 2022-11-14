@@ -8,12 +8,14 @@
         <Header></Header>
       </el-header>
       <el-main class="main">
+        <Tabs></Tabs>
         <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
 </template>
 <script setup lang="ts">
+  import Tabs from '@/layout/tabs/Tabs.vue'
   import Header from '@/layout/header/Header.vue'
   import MenuBar from '@/layout/menu/MenuBar.vue'
 </script>
@@ -30,7 +32,7 @@
     background-color: #009688;
   }
   .main {
-    background-color: darkgoldenrod;
+    // background-color: darkgoldenrod;
   }
 }
 </style>
