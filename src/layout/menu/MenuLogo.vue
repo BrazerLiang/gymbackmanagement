@@ -32,8 +32,8 @@
   .logo {
     display: flex;
     width: 100%;
-    height: 60px;
-    line-height: 60px;
+    height: 50px;
+    line-height: 50px;
     background: #2b2f3a;
     text-align: center;
     cursor: pointer;
@@ -47,7 +47,7 @@
     .logo-title {
       color: #fff;
       font-weight: 800;
-      line-height: 60px;
+      line-height: 50px;
       font-size: 22px;
       font-family: FangSong;
     }

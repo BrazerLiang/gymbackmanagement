@@ -14,6 +14,8 @@
   const getBredcrumb = () => {
     //从路由里面获取所有有meta和title
     let mached = route.matched.filter((item) => item.meta && item.meta.title);
+    console.log(mached);
+    
     //判断第一个是否是首页,不是，构造一个
     const first = mached[0];
     if (first.path !== "/dashboard") {

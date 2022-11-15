@@ -29,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "/userList",
-        component: () => import('@/views/system/UserList.vue'),
+        component: () => import('@/views/system/user/UserList.vue'),
         name: "userList",
         meta: {
           title: "员工管理",
@@ -39,7 +39,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: "/roleList",
-        component: () => import('@/views/system/RoleList.vue'),
+        component: () => import('@/views/system/role/RoleList.vue'),
         name: "roleList",
         meta: {
           title: "角色管理",
@@ -49,7 +49,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: "/menuList",
-        component: () => import('@/views/system/MenuList.vue'),
+        component: () => import('@/views/system/menu/MenuList.vue'),
         name: "menuList",
         meta: {
           title: "权限管理",
@@ -71,7 +71,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "/cardType",
-        component: () => import('@/views/member/CardType.vue'),
+        component: () => import('@/views/member/type/CardType.vue'),
         name: "cardType",
         meta: {
           title: "会员卡类型",
@@ -81,7 +81,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: "/memberList",
-        component: () => import('@/views/member/MemberList.vue'),
+        component: () => import('@/views/member/list/MemberList.vue'),
         name: "memberList",
         meta: {
           title: "会员管理",
@@ -91,7 +91,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: "/myFee",
-        component: () => import('@/views/member/MyFee.vue'),
+        component: () => import('@/views/member/fee/MyFee.vue'),
         name: "myFee",
         meta: {
           title: "我的充值",
